@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/MainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        tools:context=".MainActivity">
+
+
+        <com.example.hcipaintframework.MyCanvasView
+            android:id="@+id/canvasView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="250dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioShape"
+            android:layout_width="0dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="10dp"
+            android:text="@string/shape"
+            app:layout_constraintStart_toEndOf="@+id/canvasView"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/radioLine"
+                android:layout_width="88dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/toggle_line"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/radioCurve"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:text="@string/toggle_curve"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/radioRect"
+                android:layout_width="93dp"
+                android:layout_height="wrap_content"
+                android:text="@string/toggle_rect"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/radioOval"
+                android:layout_width="92dp"
+                android:layout_height="wrap_content"
+                android:text="@string/toggle_oval"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="45dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:drawableTop="@drawable/ic_brush_black_24dp"
+            android:gravity="end"
+            app:layout_constraintBottom_toTopOf="@+id/clearBtn"
+            app:layout_constraintEnd_toStartOf="@+id/spinner3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/radioShape"
+            app:layout_constraintTop_toBottomOf="@+id/radioShape"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="70dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:drawableTop="@drawable/ic_format_color_fill_black_24dp"
+            android:text="@string/FillSwitch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toEndOf="@+id/radioShape"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/ColorPicker"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:drawableTop="@drawable/ic_color_lens_black_24dp"
+            android:text="@string/ColorB"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/radioShape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radioShape"
+            app:layout_constraintTop_toBottomOf="@+id/switch1"
+            tools:text="Color" />
+
+        <Button
+            android:id="@+id/clearBtn"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/ClearMsg"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/radioShape" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
